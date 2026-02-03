@@ -87,7 +87,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
               style={{ transitionDelay: isOpen ? `${index * 70}ms` : "0ms" }}
               className={({ isActive }) =>
-                `text-[28px] transition-all duration-500 transform ${
+                `text-[16px] transition-all duration-500 transform ${
                   isOpen
                     ? "translate-x-0 opacity-100"
                     : "-translate-x-4 opacity-0"
