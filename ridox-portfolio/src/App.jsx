@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainLayout from "./layout/mainLayout";
 import Home from "./pages/Home";
+import Work from "./pages/Work";
+import About from "./pages/About";
+import Resume from "./pages/Resume";
 function App() {
   return (
     <>
@@ -8,6 +11,9 @@ function App() {
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/resume" element={<Resume />} />
           </Route>
         </Routes>
       </Router>

@@ -85,9 +85,9 @@ const projects = [
 
 const Home = () => {
   return (
-    <div className="mt-[120px]">
+    <div className="mt-[140px]">
       <img src={AvatarImg} alt="" className="rounded-[50%]" />
-      <p className="lg:text-[48px] text-[33px]">
+      <p className="lg:text-[48px] text-[30px]">
         Hello👋🏼, I’m Ridwan Olukoya, A Product (UX) and Brand Identity Designer
         .
         <span className="text-[#8B8A8A]">
@@ -97,7 +97,7 @@ const Home = () => {
         </span>
       </p>
 
-      <div className="flex gap-5 mt-[34px]">
+      <div className="flex gap-5 mt-[34px] items-center">
         <button className=" bg-[#191919] text-white rounded-full px-[20px] py-[20px] flex items-center gap-2 text-[24px] ">
           <svg
             width="18"
@@ -113,7 +113,8 @@ const Home = () => {
           </svg>
           Book a call
         </button>
-        <button className=" bg-[#F4F4F4] text-[#191919] rounded-full px-[20px] py-[20px] flex items-center gap-2 text-[24px]">
+        {/* Second Button - Circle on small, Pill on large */}
+        <button className="bg-[#F4F4F4] text-[#191919] rounded-[24px] md:rounded-full w-[70px] h-[70px] md:w-auto md:h-auto md:px-8 md:py-5 justify-center flex items-center gap-2 text-[24px] transition-all active:scale-95">
           <svg
             width="18"
             height="21"
@@ -126,8 +127,64 @@ const Home = () => {
               fill="black"
             />
           </svg>
-          Connect with me
+          <span className="hidden md:inline">Connect with me</span>
         </button>
+      </div>
+      {/* my works div */}
+      <div className="mt-[80px] mb-[120px]">
+        <h2 className="text-[32px] mb-[32px]">My work</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[20px] gap-y-[48px]">
+          {projects.map((project) => (
+            <div key={project.id} className="flex flex-col">
+              {/* Image Container */}
+              <div className="rounded-[12px] overflow-hidden bg-[#F4F4F4]">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Project Info */}
+              <div className="mt-[16px]">
+                <div className="flex items-center gap-2 text-[14px] text-[#8B8A8A] uppercase tracking-wider">
+                  <span className="font-semibold text-black">
+                    {project.title}
+                  </span>
+                  <span>/</span>
+                  <span>{project.year}</span>
+                </div>
+
+                <p className="mt-[8px] text-[18px] text-[#191919] leading-tight">
+                  {project.description}
+                </p>
+
+                <Link
+                  to={project.link}
+                  className="inline-flex items-center gap-1 mt-[12px] text-[14px] font-medium hover:underline"
+                >
+                  View project
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 11L11 1M11 1H3M11 1V9"
+                      stroke="black"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
