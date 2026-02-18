@@ -31,7 +31,7 @@ const projects = [
   },
   {
     id: 3,
-    title: "Blooming Bet",
+    title: "betting platform",
     year: "2025",
     description: "Work in progress - Designing and Development",
     image: bloomingBetImg,
